@@ -69,7 +69,9 @@
     "node-gyp": "8.x"
   },
   "scripts": {
-    "build": "node-pre-gyp build",
+    "build": "node-pre-gyp --arch arm configure && node-pre-gyp --arch arm build",
+    "clean": "node-pre-gyp clean",
+    "pregyp": "node-pre-gyp",
     "build:debug": "node-pre-gyp build --debug",
     "install": "node-pre-gyp install --fallback-to-build",
     "pretest": "node test/support/createdb.js",
